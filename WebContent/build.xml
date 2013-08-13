@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<project name="jspx-demo" default="buildwar" basedir=".">
+
+	<!-- ================================================================== -->
+	<!-- Initialization of all property settings                            -->
+	<!-- ================================================================== -->
+	<target name="init">
+		<property name="name" value="jspx-demo" />
+		<property name="src.dir" value="src" />
+		<property name="stage.dir" value="stage" />
+		<property name="build.dir" value="build" />
+		<property name="webroot.dir" value="WebContent" />
+		<property name="lib.dir" value="${webroot.dir}/WEB-INF/lib" />
+		<property name="web-classes.dest" value="${stage.dir}/web/WEB-INF/classes" />
+		<property name="web.classpath" value="${lib.dir}/jspx_1.1.0.jar:${lib.dir}/commons-fileupload-1.2.1.jar:${lib.dir}/poi-3.1-FINAL-20080629.jar" />
+		<property file="ant.properties" />
+	</target>
+
+
+	<!-- ================================================================== -->
+	<!-- Removes all created files and directories                          -->
+	<!-- ================================================================== -->
+
+	<target name="clean" depends="init">
+		<delete dir="${stage.dir}/web" />
+		<delete dir="${build.dir}/temp" />
+	</target>
+
+
+	<!-- ================================================================== -->
+	<!-- Makes sure the needed directory structure is in place              -->
+	<!-- ================================================================== -->
+
+	<target name="prepare" depends="clean">
+		<mkdir dir="${stage.dir}" />
+		<mkdir dir="${stage.dir}/web" />
+		<mkdir dir="${stage.dir}/web/WEB-INF" />
+		<mkdir dir="${stage.dir}/web/WEB-INF/classes" />
+		<mkdir dir="${stage.dir}/web/WEB-INF/lib" />
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.dir}/temp" />
+	</target>
+
+
+	<!-- ================================================================== -->
+	<!-- Compilation of the web part of the application                     -->
+	<!-- ================================================================== -->
+	<target name="web-classes" depends="prepare">
+		<javac srcdir="${src.dir}" destdir="${web-classes.dest}" classpath="${web.classpath}" debug="true" />
+		<copy todir="${stage.dir}/web">
+			<fileset dir="${webroot.dir}">
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="war" depends="web-classes">
+		<war warfile="${build.dir}/temp/${name}.war" webxml="${webroot.dir}/WEB-INF/web.xml" update="true" basedir="${stage.dir}/web">
+		</war>
+	</target>
+
+	<target name="buildwar" depends="war">
+		<copy todir="${serverlocation}" file="${build.dir}/temp/${name}.war" verbose="true" />
+		<antcall target="clean"></antcall>
+	</target>
+</project>
