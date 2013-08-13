@@ -1,0 +1,17 @@
+.g-bd{width:980px;margin:0 auto;}
+.g-cnt{width:680px;margin:0 auto;padding:30px;}
+.m-item{padding:10px 20px;border:solid 1px #ccc;border-top:0;}
+.w-lb0, .w-lb1, .w-lb2{width:200px;}
+.w-lb0{height:70px;line-height:70px;}
+.w-lb1{height:100px;line-height:100px;}
+.w-lb2{height:80px;line-height:80px;}
+.w-ckb, .m-multi{height:70px;}
+.m-multi{line-height:30px;}
+.w-ckb{line-height:70px;}
+.w-multi1{line-height:70px;}
+.m-multi textarea{width:400px;height:50px;}
+.m-item0{border-top:solid 1px #ccc;padding-left:0;}
+.m-btn input{margin-left:50px;width:100px;height:30px;cursor:pointer;}
+.m-flash-box{width:400px;margin:20px auto;}
+.w-ckb label{margin-right:60px;}
+.w-ipt0{margin-right:30px;}
