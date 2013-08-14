@@ -12,9 +12,15 @@
       <form action="xxx.xxx" method="POST">
         <div class="m-item m-item0">
           <div class="m-flash-box" id="flash-box">
-              <embed id="flash-obj" name="flash-obj" allowScriptAccess="always"
+              <object classid="clsid:F08DF954-8592-11D1-B16A-00C0F0283628" id="flash-obj" 
+              width="100" height="50">
+                <param name="flashvars" value="src='res/hmm.mp3'">
+                <param name="movie" value="res/mediaAS.swf" />
+                <param name="allowScriptAccess" value="always" />
+              </object>
+              <embed name="flash-obj" allowScriptAccess="always"
                src="res/mediaAS.swf" width="400" 
-               height="300"></embed>
+               height="100"></embed>
           </div>
           <div class="m-btn">
             <input value="播放" type="button" name="paly"  id="play" />
