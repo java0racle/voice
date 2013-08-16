@@ -5,6 +5,13 @@
     <title>详情页面</title>
     <link rel="stylesheet" type="text/css" href="styles/reset.css" />
     <link rel="stylesheet" type="text/css" href="styles/detail.css" />
+    <script type="text/javascript">
+      window.isReady = function(){
+        setTimeout(function(){
+          vc.p._$$Voice._$allocate({});
+        },1000)
+      }
+    </script>
   </head>
   <body>
     <div class="g-bd">
@@ -13,18 +20,17 @@
         <div class="m-item m-item0">
           <div class="m-flash-box" id="flash-box">
               <object classid="clsid:F08DF954-8592-11D1-B16A-00C0F0283628" id="flash-obj" 
-              width="100" height="50">
-                <param name="flashvars" value="src='res/hmm.mp3'">
+              width="400" height="230">
+                <param name="flashvars" value="">
                 <param name="movie" value="res/mediaAS.swf" />
                 <param name="allowScriptAccess" value="always" />
-              </object>
               <embed name="flash-obj" allowScriptAccess="always"
                src="res/mediaAS.swf" width="400" 
-               height="100"></embed>
+               height="230" />
+               </object>
           </div>
           <div class="m-btn">
             <input value="播放" type="button" name="paly"  id="play" />
-            <input value="暂停" type="button" name="pause" id="pause" />
             <input value="停止" type="button" name="stop" id="stop" />
             <input value="标记起止时间" type="button" name="mark" id="mark" />
           </div>    
