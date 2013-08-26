@@ -1,0 +1,136 @@
+<!doctype>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>详情页面</title>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="styles/detail.css" />
+    <script type="text/javascript">
+      window.isReady = function(){
+        setTimeout(function(){
+          vc.p._$$Voice._$allocate({});
+        },1000)
+      }
+    </script>
+  </head>
+  <body>
+    <div class="g-bd">
+      <div class="g-cnt">
+      <form action="xxx.xxx" method="POST">
+        <div class="m-item m-item0">
+          <div class="m-flash-box" id="flash-box">
+              <object classid="clsid:F08DF954-8592-11D1-B16A-00C0F0283628" id="flash-obj" 
+              width="400" height="230">
+                <param name="flashvars" value="">
+                <param name="movie" value="res/mediaAS.swf" />
+                <param name="allowScriptAccess" value="always" />
+              <embed name="flash-obj" allowScriptAccess="always"
+               src="res/mediaAS.swf" width="400" 
+               height="230" />
+               </object>
+          </div>
+          <div class="m-btn">
+            <input value="播放" type="button" name="paly"  id="play" />
+            <input value="停止" type="button" name="stop" id="stop" />
+            <input value="标记起止时间" type="button" name="mark" id="mark" />
+          </div>    
+        </div>
+        <div class="m-item">
+          <div>
+            <label class="w-lb0">语音开始时间（s）</label>
+            <input class="w-ipt0" type="text" name="startTime" />
+            <input type="checkbox" name="stvoice" />
+            <label>开始时非静音</label>
+          </div>
+          <div>
+            <label class="w-lb0">语音结束时间（s）</label>
+            <input class="w-ipt0" type="text" name="startTime" />
+            <input type="checkbox" name="endvoice" />
+            <label>结束时非静音</label>
+          </div>
+        </div>
+        <div class="f-cb m-item">
+          <label class="f-fl w-lb1">当前语音是否包含有效语音</label>
+          <div class="f-fl f-cb m-multi">
+            <p>
+              <input type="radio" name="validVoice" />
+              <label>包含有效语音</label>
+            </p>
+            <p>
+              <input type="radio" name="validVoice" />
+              <label>不包含有效语音</label>
+              <span class="m-btn">
+                <input type="button" name="ignore" value="放弃" />
+              </span>
+            </p>
+            <p>
+              (如不包含有效语音，则无需进行转写，自己点击放弃或者提交结果均可)
+            </p>
+          </div>
+        </div>
+        <div class="f-cb m-item">
+          <label class="f-fl w-lb0">当前语音是否包含背景噪音</label>
+          <div class="f-fl f-cb m-multi">
+            <p>
+              <input type="radio" name="noise" />
+              <label>包含背景噪音</label>
+            </p>
+            <p>
+              <input type="radio" name="noise" />
+              <label>不包含背景噪音</label>
+            </p>
+          </div>
+        </div>
+        <div class="f-cb m-item">
+          <label class="f-fl w-lb0">当前语音的语音情况</label>
+          <div class="f-fl f-cb m-multi">
+            <p>
+              <input type="radio" name="language" />
+              <label>全部为中文</label>
+            </p>
+            <p>
+              <input type="radio" name="language" />
+              <label>包含英文字母或单词</label>
+            </p>
+          </div>
+        </div>
+        <div class="f-cb m-item">
+          <label class="f-fl w-lb2">语音内容</label>
+          <div class="f-fl f-cb m-multi">
+            <p>
+              <textarea id="voice-content"></textarea>
+            </p>
+            <p>
+              参考识别结果:<span></span>
+            </p>
+          </div>
+        </div>
+        <div class="f-cb m-item">
+          <label class="f-fl w-lb0">说话人性别</label>
+          <div class="f-fl w-ckb">
+            <input type="radio" name="sex" />
+            <label>男</label>
+            <input type="radio" name="sex" />
+            <label>女</label>
+          </div>
+        </div>
+        <div class="f-cb m-item">
+          <label class="f-fl w-lb0">是否包含口音</label>
+          <div class="f-fl w-ckb">
+            <input type="radio" name="dialect" />
+            <label>是</label>
+            <input type="radio" name="dialect" />
+            <label>否</label>
+          </div>
+        </div>
+        <div class="f-cb m-item m-btn">
+          <input type="submit" name="submit" value="确认提交" />
+          <input type="reset" name="reset" value="重置" />
+        </div>
+      </form>
+      </div>
+    </div>
+    <script type="text/javascript" src="javascript/nej/define.js?pro=voice"></script>
+    <script type="text/javascript" src="javascript/detail.js"></script>
+  </body>
+</html>
